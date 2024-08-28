@@ -1,0 +1,11 @@
+name: base
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+  allure:
+    uses: .github/workflows/wf.yml@main
+    secrets: inherit

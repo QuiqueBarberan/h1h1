@@ -1,0 +1,19 @@
+name: probatinas
+
+on:
+  workflow_call:
+
+jobs:
+  allure:
+    runs-on: ubuntu-latest
+    env:
+      USERJSON: ${{ secrets.USERJSON }}
+    steps:
+      - name: Step1
+        run: |    
+          echo '${{ secrets.USERJSON }}' > user.json  
+          USERJSON=$(cat user.json)
+          EMAIL=$(echo "$USERJSON" | jq -r '.cuentas[] | select(.name == "CuentaTokenAPIJira") | .email')
+          PASSWORD=$(echo "$USERJSON" | jq -r '.cuentas[] | select(.name == "CuentaTokenAPIJira") | .password')
+          rm user.json
+
