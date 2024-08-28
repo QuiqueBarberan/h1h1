@@ -16,4 +16,6 @@ jobs:
           EMAIL=$(echo "$USERJSON" | jq -r '.cuentas[] | select(.name == "CuentaTokenAPIJira") | .email')
           PASSWORD=$(echo "$USERJSON" | jq -r '.cuentas[] | select(.name == "CuentaTokenAPIJira") | .password')
           rm user.json
+          echo $EMAIL
+          echo $PASSWORD
 
