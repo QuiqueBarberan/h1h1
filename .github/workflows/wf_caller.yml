@@ -1,9 +1,9 @@
+name: holaquetal
+
 on:
   workflow_dispatch:
 
 jobs:
   job1:
-    runs-on: ubuntu-latest
-  allure:
     uses: QuiqueBarberan/h1h1/.github/workflows/wf.yml@main
     secrets: inherit
