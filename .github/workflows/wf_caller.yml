@@ -7,5 +7,5 @@ jobs:
   job1:
     runs-on: ubuntu-latest
   allure:
-    uses: .github/workflows/wf.yml@main
+    uses: QuiqueBarberan/h1h1/.github/workflows/wf.yml@main
     secrets: inherit
